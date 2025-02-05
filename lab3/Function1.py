@@ -25,20 +25,22 @@ def solve():
 solve()
 
 #EX4
-def prime(n):
-    if n < 2:
-        return False
-    for i in range(2, int(n ** 0.5) + 1):
-        if n % i == 0:
+def prime(i):
+    for x in range(2, i):
+        if i == 1:
+            return False
+        if i % x == 0:
             return False
     return True
 
-def filter_prime():
-    numbers = list(map(int, input("Enter numbers: ").split()))
-    primes = list(filter(prime, numbers))
-    print("Prime numbers:", primes)
-
-filter_prime()
+list = [1, 3, 4, 5, 8, 12, 11]
+def filter_prime(some_list):
+    arr=[]
+    for i in some_list:
+        if prime(i) == True:
+            arr.append(i)
+    return arr
+list1 = filter_prime(list)
 
 #EX5
 import itertools
